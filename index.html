@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eBill Login</title>
     <!-- Bootstrap CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
     <script type="module" src="./firebas.js"></script>
     <style>
         body {
-            background-image: url('new-image.png'); /* Replace 'your-background-image.jpg' with your actual image path */
+            background-image: url('/image/new-image.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            opacity: 1.9; /* Adjust opacity as per your preference */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0;
+            padding: 0;
         }
 
         .navbar .nav-link.btn {
@@ -23,14 +22,14 @@
         }
 
         .carousel-item img {
-            max-height: 400px; /* Adjust as per your image height */
-            object-fit: cover; /* Ensure images cover the entire carousel */
+            max-height: 400px;
+            object-fit: cover;
         }
 
         .left-column, .right-column {
             padding: 20px;
-            height: 100vh; /* Full viewport height */
-            overflow-y: auto; /* Enable scrolling if content exceeds viewport */
+            height: 100vh;
+            overflow-y: auto;
         }
 
         .card {
@@ -43,27 +42,25 @@
         }
 
         .login-form, .admin-login-form {
-            max-width: 400px; /* Adjust based on your design */
+            max-width: 400px;
         }
 
         .slider-container {
             position: relative;
             width: 100%;
-            
             padding: 10px;
-            
             white-space: nowrap;
-            z-index: 1; /* Ensure the slider is above other content */
-            margin-top: 20px; /* Adjust top margin as needed */
+            z-index: 1;
+            margin-top: 20px;
         }
 
         .slider-text {
             position: absolute;
-            top: 50%; /* Adjust vertical alignment as needed */
-            left: 50%; /* Center horizontally */
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            text-align: center; /* Center align text */
-            width: 100%; /* Full width */
+            text-align: center;
+            width: 100%;
             animation: slide-left 20s linear infinite;
         }
 
@@ -81,7 +78,7 @@
                 height: auto;
             }
             .slider-container {
-                display: none; /* Hide the slider on smaller screens */
+                display: none;
             }
         }
     </style>
@@ -97,7 +94,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning text-dark" href="help.html">Help</a>
+                        <a class="nav-link btn btn-warning text-dark" href="/E-bill Help/help.html">Help</a>
                     </li>
                 </ul>
             </div>
@@ -113,13 +110,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="image-1.png" class="d-block w-100" alt="Image 1">
+                <img src="/image/image-1.png" class="d-block w-100" alt="Image 1">
             </div>
             <div class="carousel-item">
-                <img src="image-2.png" class="d-block w-100" alt="Image 2">
+                <img src="/image/image-2.png" class="d-block w-100" alt="Image 2">
             </div>
             <div class="carousel-item">
-                <img src="image-3.png" class="d-block w-100" alt="Image 3">
+                <img src="/image/image-3.png" class="d-block w-100" alt="Image 3">
             </div>
         </div>
         <!-- Carousel Controls -->
@@ -157,7 +154,7 @@
                                 <label for="admin-password">Password</label>
                                 <input type="password" class="form-control" id="admin-password" name="admin-password" placeholder="Enter admin password" required>
                             </div>
-                            <a href="admin-dashboard.html" class="btn btn-primary btn-sm">Log In</a>
+                            <a href="/E-bill Admin-dashboard/admin-dashboard-js.html" class="btn btn-primary btn-sm">Log In</a>
                         </form>
                     </div>
                 </div>
@@ -183,25 +180,26 @@
                         <h4 class="mb-0">Account Login</h4>
                     </div>
                     <div class="card-body p-4 login-form">
-                        <form action="" method="POST">
+                        <form id="loginForm" method="POST">
                             <div id="signInMessage" class="messageDiv" style="display:none"></div>
                             <div class="form-group mb-2">
                                 <label for="email">Email Address</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                                <div class="invalid-feedback">Please enter your password.</div>
                             </div>
                             <div class="form-group mb-2 text-center">
-                                <a href="dashboard.html" class="btn btn-primary btn-sm">Log In</a>
-                                <!-- <button type="submit" class="btn btn-primary mr-2" id="submitSignIn">Log In</button> -->
-                                <a href="signup.html" class="btn btn-success mr-2">Sign Up</a>
-                                <a href="forgot_password.html" class="btn btn-outline-secondary">Forgot Password?</a>
+                                <button type="submit" class="btn btn-primary btn-sm">Log In</button>
+                                <!-- <a href="/E-bill Home-Page/dashboard-js.html" class="btn btn-success mr-2">Login</a> -->
+                                <a href="/E-bill Signup-page/signup-js.html" class="btn btn-success mr-2">Sign Up</a>
+                                <a href="/Utilities-Functions/forgot_password.html" class="btn btn-outline-secondary">Forgot Password?</a>
                             </div>
                         </form>
                     </div>
-                   
                 </div>
 
                 <!-- Quick Pay Option Card -->
@@ -215,7 +213,7 @@
                                 <label for="account-number">Account Number</label>
                                 <input type="text" class="form-control" id="account-number" name="account-number" placeholder="Enter your account number" required>
                             </div>
-                            <a href="quick-bill.html" class="btn btn-success mr-2">Pay</a>
+                            <button type="submit" class="btn btn-info btn-block">Pay Now</button>
                         </form>
                     </div>
                 </div>
@@ -232,10 +230,55 @@
     <script>
         // Initialize Carousel
         $('.carousel').carousel({
-            interval: 5000, // Change slide every 5 seconds
-            pause: false // Do not pause on hover
+            interval: 5000,
+            pause: false
         });
-    </script>
-</body>
-</html>
 
+               // Login Form Validation and Local Storage Check
+               document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                let isValid = true;
+    
+                const email = document.getElementById('email');
+                const password = document.getElementById('password');
+                const signInMessage = document.getElementById('signInMessage');
+    
+                // Reset validation classes and messages
+                email.classList.remove('is-invalid');
+                password.classList.remove('is-invalid');
+                signInMessage.style.display = 'none';
+                signInMessage.classList.remove('alert', 'alert-danger', 'alert-success');
+    
+                // Validate email
+                if (!email.value) {
+                    email.classList.add('is-invalid');
+                    isValid = false;
+                }
+    
+                // Validate password
+                if (!password.value) {
+                    password.classList.add('is-invalid');
+                    isValid = false;
+                }
+    
+                // If the form is valid, check credentials
+                if (isValid) {
+                    const storedUser = JSON.parse(localStorage.getItem('user'));
+                    if (storedUser && storedUser.email === email.value && storedUser.password === password.value) {
+                        signInMessage.style.display = 'block';
+                        signInMessage.classList.add('alert', 'alert-success');
+                        signInMessage.textContent = "Login successful!";
+                        setTimeout(() => {
+                            window.location.href = '/E-bill Home-Page/dashboard.html';
+                        }, 2000);
+                    } else {
+                        signInMessage.style.display = 'block';
+                        signInMessage.classList.add('alert', 'alert-danger');
+                        signInMessage.textContent = "Invalid email or password.";
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
